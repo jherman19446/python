@@ -1,0 +1,608 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.19, pytest-8.3.4, pluggy-1.5.0
+rootdir: /home/jon/exercism/python/black-jack
+plugins: subtests-0.14.1
+collected 6 items
+
+black_jack_test.py ......                       [100%]
+
+=================================== FAILURES ===================================
+_ BlackJackTest.test_can_double_down [variation #1] (expected=True, hand=('A', '9')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_double_down>
+
+    @pytest.mark.task(taskno=6)
+    def test_can_double_down(self):
+        test_data = [(('A', '9'), True), (('K', 'A'), True),
+                     (('4', '5'), True),(('A', 'A'), False),
+                     (('10', '2'), False), (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = can_double_down(*hand)
+                error_msg = (f'Called can_double_down({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be doubled down.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called can_double_down(A, 9). The function returned None, but hand ('A', '9') can be doubled down.
+
+black_jack_test.py:114: AssertionError
+_ BlackJackTest.test_can_double_down [variation #2] (expected=True, hand=('K', 'A')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_double_down>
+
+    @pytest.mark.task(taskno=6)
+    def test_can_double_down(self):
+        test_data = [(('A', '9'), True), (('K', 'A'), True),
+                     (('4', '5'), True),(('A', 'A'), False),
+                     (('10', '2'), False), (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = can_double_down(*hand)
+                error_msg = (f'Called can_double_down({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be doubled down.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called can_double_down(K, A). The function returned None, but hand ('K', 'A') can be doubled down.
+
+black_jack_test.py:114: AssertionError
+_ BlackJackTest.test_can_double_down [variation #3] (expected=True, hand=('4', '5')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_double_down>
+
+    @pytest.mark.task(taskno=6)
+    def test_can_double_down(self):
+        test_data = [(('A', '9'), True), (('K', 'A'), True),
+                     (('4', '5'), True),(('A', 'A'), False),
+                     (('10', '2'), False), (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = can_double_down(*hand)
+                error_msg = (f'Called can_double_down({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be doubled down.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called can_double_down(4, 5). The function returned None, but hand ('4', '5') can be doubled down.
+
+black_jack_test.py:114: AssertionError
+_ BlackJackTest.test_can_double_down [variation #4] (expected=False, hand=('A', 'A')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_double_down>
+
+    @pytest.mark.task(taskno=6)
+    def test_can_double_down(self):
+        test_data = [(('A', '9'), True), (('K', 'A'), True),
+                     (('4', '5'), True),(('A', 'A'), False),
+                     (('10', '2'), False), (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = can_double_down(*hand)
+                error_msg = (f'Called can_double_down({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be doubled down.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called can_double_down(A, A). The function returned None, but hand ('A', 'A') cannot be doubled down.
+
+black_jack_test.py:114: AssertionError
+_ BlackJackTest.test_can_double_down [variation #5] (expected=False, hand=('10', '2')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_double_down>
+
+    @pytest.mark.task(taskno=6)
+    def test_can_double_down(self):
+        test_data = [(('A', '9'), True), (('K', 'A'), True),
+                     (('4', '5'), True),(('A', 'A'), False),
+                     (('10', '2'), False), (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = can_double_down(*hand)
+                error_msg = (f'Called can_double_down({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be doubled down.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called can_double_down(10, 2). The function returned None, but hand ('10', '2') cannot be doubled down.
+
+black_jack_test.py:114: AssertionError
+_ BlackJackTest.test_can_double_down [variation #6] (expected=False, hand=('10', '9')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_double_down>
+
+    @pytest.mark.task(taskno=6)
+    def test_can_double_down(self):
+        test_data = [(('A', '9'), True), (('K', 'A'), True),
+                     (('4', '5'), True),(('A', 'A'), False),
+                     (('10', '2'), False), (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = can_double_down(*hand)
+                error_msg = (f'Called can_double_down({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be doubled down.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called can_double_down(10, 9). The function returned None, but hand ('10', '9') cannot be doubled down.
+
+black_jack_test.py:114: AssertionError
+_ BlackJackTest.test_can_split_pairs [variation #1] (expected=True, input=('Q', 'K')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_split_pairs>
+
+    @pytest.mark.task(taskno=5)
+    def test_can_split_pairs(self):
+        test_data = [(('Q', 'K'), True), (('6', '6'), True),
+                     (('A', 'A'), True),(('10', 'A'), False),
+                     (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', input=hand, expected=expected):
+                actual_result = can_split_pairs(*hand)
+                error_msg = (f'Called can_split_pairs({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be split into pairs.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called can_split_pairs(Q, K). The function returned None, but hand ('Q', 'K') can be split into pairs.
+
+black_jack_test.py:99: AssertionError
+_ BlackJackTest.test_can_split_pairs [variation #2] (expected=True, input=('6', '6')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_split_pairs>
+
+    @pytest.mark.task(taskno=5)
+    def test_can_split_pairs(self):
+        test_data = [(('Q', 'K'), True), (('6', '6'), True),
+                     (('A', 'A'), True),(('10', 'A'), False),
+                     (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', input=hand, expected=expected):
+                actual_result = can_split_pairs(*hand)
+                error_msg = (f'Called can_split_pairs({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be split into pairs.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called can_split_pairs(6, 6). The function returned None, but hand ('6', '6') can be split into pairs.
+
+black_jack_test.py:99: AssertionError
+_ BlackJackTest.test_can_split_pairs [variation #3] (expected=True, input=('A', 'A')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_split_pairs>
+
+    @pytest.mark.task(taskno=5)
+    def test_can_split_pairs(self):
+        test_data = [(('Q', 'K'), True), (('6', '6'), True),
+                     (('A', 'A'), True),(('10', 'A'), False),
+                     (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', input=hand, expected=expected):
+                actual_result = can_split_pairs(*hand)
+                error_msg = (f'Called can_split_pairs({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be split into pairs.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called can_split_pairs(A, A). The function returned None, but hand ('A', 'A') can be split into pairs.
+
+black_jack_test.py:99: AssertionError
+_ BlackJackTest.test_can_split_pairs [variation #4] (expected=False, input=('10', 'A')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_split_pairs>
+
+    @pytest.mark.task(taskno=5)
+    def test_can_split_pairs(self):
+        test_data = [(('Q', 'K'), True), (('6', '6'), True),
+                     (('A', 'A'), True),(('10', 'A'), False),
+                     (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', input=hand, expected=expected):
+                actual_result = can_split_pairs(*hand)
+                error_msg = (f'Called can_split_pairs({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be split into pairs.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called can_split_pairs(10, A). The function returned None, but hand ('10', 'A') cannot be split into pairs.
+
+black_jack_test.py:99: AssertionError
+_ BlackJackTest.test_can_split_pairs [variation #5] (expected=False, input=('10', '9')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_can_split_pairs>
+
+    @pytest.mark.task(taskno=5)
+    def test_can_split_pairs(self):
+        test_data = [(('Q', 'K'), True), (('6', '6'), True),
+                     (('A', 'A'), True),(('10', 'A'), False),
+                     (('10', '9'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', input=hand, expected=expected):
+                actual_result = can_split_pairs(*hand)
+                error_msg = (f'Called can_split_pairs({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"can" if expected else "cannot"} be split into pairs.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called can_split_pairs(10, 9). The function returned None, but hand ('10', '9') cannot be split into pairs.
+
+black_jack_test.py:99: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #1] (expected=True, hand=('A', 'K')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called is_blackjack(A, K). The function returned None, but hand ('A', 'K') is a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #2] (expected=True, hand=('10', 'A')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != True : Called is_blackjack(10, A). The function returned None, but hand ('10', 'A') is a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #3] (expected=False, hand=('10', '9')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called is_blackjack(10, 9). The function returned None, but hand ('10', '9') is not a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #4] (expected=False, hand=('A', 'A')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called is_blackjack(A, A). The function returned None, but hand ('A', 'A') is not a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #5] (expected=False, hand=('4', '7')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called is_blackjack(4, 7). The function returned None, but hand ('4', '7') is not a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #6] (expected=False, hand=('9', '2')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called is_blackjack(9, 2). The function returned None, but hand ('9', '2') is not a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_is_blackjack [variation #7] (expected=False, hand=('Q', 'K')) _
+
+self = <black_jack_test.BlackJackTest testMethod=test_is_blackjack>
+
+    @pytest.mark.task(taskno=4)
+    def test_is_blackjack(self):
+        test_data = [(('A', 'K'), True), (('10', 'A'), True),
+                     (('10', '9'), False), (('A', 'A'), False),
+                     (('4', '7'), False), (('9', '2'), False),
+                     (('Q', 'K'), False)]
+    
+        for variant, (hand, expected) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', hand=hand, expected=expected):
+                actual_result = is_blackjack(*hand)
+                error_msg = (f'Called is_blackjack({hand[0]}, {hand[1]}). '
+                             f'The function returned {actual_result}, '
+                             f'but hand {hand} {"is" if expected else "is not"} a blackjack.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_msg)
+E               AssertionError: None != False : Called is_blackjack(Q, K). The function returned None, but hand ('Q', 'K') is not a blackjack.
+
+black_jack_test.py:84: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #1] (ace_value=11, card_one='2', card_two='3') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 1 != 11 : Called value_of_ace(2, 3). The function returned 1, but the test expected 11 as the value of an ace card when the hand includes ('2', '3').
+
+black_jack_test.py:68: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #2] (ace_value=11, card_one='3', card_two='6') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 1 != 11 : Called value_of_ace(3, 6). The function returned 1, but the test expected 11 as the value of an ace card when the hand includes ('3', '6').
+
+black_jack_test.py:68: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #3] (ace_value=11, card_one='5', card_two='2') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 1 != 11 : Called value_of_ace(5, 2). The function returned 1, but the test expected 11 as the value of an ace card when the hand includes ('5', '2').
+
+black_jack_test.py:68: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #4] (ace_value=11, card_one='8', card_two='2') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 1 != 11 : Called value_of_ace(8, 2). The function returned 1, but the test expected 11 as the value of an ace card when the hand includes ('8', '2').
+
+black_jack_test.py:68: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #5] (ace_value=11, card_one='5', card_two='5') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 1 != 11 : Called value_of_ace(5, 5). The function returned 1, but the test expected 11 as the value of an ace card when the hand includes ('5', '5').
+
+black_jack_test.py:68: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #11] (ace_value=1, card_one='2', card_two='A') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 11 != 1 : Called value_of_ace(2, A). The function returned 11, but the test expected 1 as the value of an ace card when the hand includes ('2', 'A').
+
+black_jack_test.py:68: AssertionError
+_ BlackJackTest.test_value_of_ace [variation #12] (ace_value=1, card_one='A', card_two='2') _
+
+self = <black_jack_test.BlackJackTest testMethod=test_value_of_ace>
+
+    @pytest.mark.task(taskno=3)
+    def test_value_of_ace(self):
+        test_data = [('2', '3', 11), ('3', '6', 11), ('5', '2', 11),
+                     ('8', '2', 11), ('5', '5', 11), ('Q', 'A', 1),
+                     ('10', '2', 1), ('7', '8', 1), ('J', '9', 1),
+                     ('K', 'K', 1), ('2', 'A', 1), ('A', '2', 1)]
+    
+        for variant, (card_one, card_two, ace_value) in enumerate(test_data, 1):
+            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, ace_value=ace_value):
+                actual_result = value_of_ace(card_one, card_two)
+                error_msg = (f'Called value_of_ace({card_one}, {card_two}). '
+                             f'The function returned {actual_result}, '
+                             f'but the test expected {ace_value} as the value of an ace card '
+                             f'when the hand includes {card_one, card_two}.')
+    
+>               self.assertEqual(value_of_ace(card_one, card_two), ace_value, msg=error_msg)
+E               AssertionError: 11 != 1 : Called value_of_ace(A, 2). The function returned 11, but the test expected 1 as the value of an ace card when the hand includes ('A', '2').
+
+black_jack_test.py:68: AssertionError
+=============================== warnings summary ===============================
+black_jack_test.py:16
+  /home/jon/exercism/python/black-jack/black_jack_test.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=1)
+
+black_jack_test.py:32
+  /home/jon/exercism/python/black-jack/black_jack_test.py:32: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=2)
+
+black_jack_test.py:53
+  /home/jon/exercism/python/black-jack/black_jack_test.py:53: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=3)
+
+black_jack_test.py:70
+  /home/jon/exercism/python/black-jack/black_jack_test.py:70: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=4)
+
+black_jack_test.py:86
+  /home/jon/exercism/python/black-jack/black_jack_test.py:86: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=5)
+
+black_jack_test.py:101
+  /home/jon/exercism/python/black-jack/black_jack_test.py:101: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=6)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+[variation #1] (expected=True, hand=('A', '9')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_double_down
+[variation #2] (expected=True, hand=('K', 'A')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_double_down
+[variation #3] (expected=True, hand=('4', '5')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_double_down
+[variation #4] (expected=False, hand=('A', 'A')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_double_down
+[variation #5] (expected=False, hand=('10', '2')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_double_down
+[variation #6] (expected=False, hand=('10', '9')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_double_down
+[variation #1] (expected=True, input=('Q', 'K')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_split_pairs
+[variation #2] (expected=True, input=('6', '6')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_split_pairs
+[variation #3] (expected=True, input=('A', 'A')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_split_pairs
+[variation #4] (expected=False, input=('10', 'A')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_split_pairs
+[variation #5] (expected=False, input=('10', '9')) SUBFAIL black_jack_test.py::BlackJackTest::test_can_split_pairs
+[variation #1] (expected=True, hand=('A', 'K')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #2] (expected=True, hand=('10', 'A')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #3] (expected=False, hand=('10', '9')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #4] (expected=False, hand=('A', 'A')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #5] (expected=False, hand=('4', '7')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #6] (expected=False, hand=('9', '2')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #7] (expected=False, hand=('Q', 'K')) SUBFAIL black_jack_test.py::BlackJackTest::test_is_blackjack
+[variation #1] (ace_value=11, card_one='2', card_two='3') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+[variation #2] (ace_value=11, card_one='3', card_two='6') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+[variation #3] (ace_value=11, card_one='5', card_two='2') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+[variation #4] (ace_value=11, card_one='8', card_two='2') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+[variation #5] (ace_value=11, card_one='5', card_two='5') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+[variation #11] (ace_value=1, card_one='2', card_two='A') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+[variation #12] (ace_value=1, card_one='A', card_two='2') SUBFAIL black_jack_test.py::BlackJackTest::test_value_of_ace
+=================== 25 failed, 6 passed, 6 warnings in 0.16s ===================

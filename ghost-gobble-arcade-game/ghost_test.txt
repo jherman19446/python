@@ -1,0 +1,118 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.19, pytest-8.3.4, pluggy-1.5.0
+rootdir: /home/jon/exercism/python/ghost-gobble-arcade-game
+plugins: subtests-0.14.1
+collected 13 items
+
+arcade_game_test.py .F.....F...F.                                        [100%]
+
+=================================== FAILURES ===================================
+_ GhostGobbleGameTest.test_dont_lose_if_touching_a_ghost_with_a_power_pellet_active _
+
+self = <arcade_game_test.GhostGobbleGameTest testMethod=test_dont_lose_if_touching_a_ghost_with_a_power_pellet_active>
+
+    @pytest.mark.task(taskno=3)
+    def test_dont_lose_if_touching_a_ghost_with_a_power_pellet_active(self):
+        actual_result = lose(True, True)
+        error_message = ('Called lose(True, True).'
+                         f'The function returned {actual_result}, but the '
+                         f'tests expected that the '
+                         'player **does not** lose because when they touched a '
+                         'ghost, a power pellet was active.')
+    
+>       self.assertIs(actual_result, False, msg=error_message)
+E       AssertionError: True is not False : Called lose(True, True).The function returned True, but the tests expected that the player **does not** lose because when they touched a ghost, a power pellet was active.
+
+arcade_game_test.py:90: AssertionError
+_ GhostGobbleGameTest.test_lose_if_touching_a_ghost_without_a_power_pellet_active _
+
+self = <arcade_game_test.GhostGobbleGameTest testMethod=test_lose_if_touching_a_ghost_without_a_power_pellet_active>
+
+    @pytest.mark.task(taskno=3)
+    def test_lose_if_touching_a_ghost_without_a_power_pellet_active(self):
+        actual_result = lose(False, True)
+        error_message = ('Called lose(False, True).'
+                         f'The function returned {actual_result}, but the '
+                         f'tests expected that the '
+                         'player loses because they touched a '
+                         'ghost without a power pellet activated.')
+>       self.assertIs(
+            actual_result, True, msg=error_message)
+E       AssertionError: False is not True : Called lose(False, True).The function returned False, but the tests expected that the player loses because they touched a ghost without a power pellet activated.
+
+arcade_game_test.py:78: AssertionError
+________________ GhostGobbleGameTest.test_win_if_all_dots_eaten ________________
+
+self = <arcade_game_test.GhostGobbleGameTest testMethod=test_win_if_all_dots_eaten>
+
+    @pytest.mark.task(taskno=4)
+    def test_win_if_all_dots_eaten(self):
+        actual_result = win(True, False, False)
+        error_message = ('Called win(True, False, False).'
+                         f'The function returned {actual_result}, but the '
+                         f'tests expected that the '
+                         'player wins because all the dots were eaten.')
+    
+>       self.assertIs(actual_result, True, msg=error_message)
+E       AssertionError: False is not True : Called win(True, False, False).The function returned False, but the tests expected that the player wins because all the dots were eaten.
+
+arcade_game_test.py:111: AssertionError
+=============================== warnings summary ===============================
+arcade_game_test.py:8
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:8: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=1)
+
+arcade_game_test.py:17
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=1)
+
+arcade_game_test.py:28
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:28: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=1)
+
+arcade_game_test.py:39
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:39: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=2)
+
+arcade_game_test.py:49
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=2)
+
+arcade_game_test.py:60
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:60: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=2)
+
+arcade_game_test.py:70
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:70: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=3)
+
+arcade_game_test.py:81
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:81: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=3)
+
+arcade_game_test.py:92
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:92: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=3)
+
+arcade_game_test.py:103
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:103: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=4)
+
+arcade_game_test.py:113
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:113: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=4)
+
+arcade_game_test.py:124
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:124: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=4)
+
+arcade_game_test.py:135
+  /home/jon/exercism/python/ghost-gobble-arcade-game/arcade_game_test.py:135: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=4)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED arcade_game_test.py::GhostGobbleGameTest::test_dont_lose_if_touching_a_ghost_with_a_power_pellet_active
+FAILED arcade_game_test.py::GhostGobbleGameTest::test_lose_if_touching_a_ghost_without_a_power_pellet_active
+FAILED arcade_game_test.py::GhostGobbleGameTest::test_win_if_all_dots_eaten
+================== 3 failed, 10 passed, 13 warnings in 0.07s ===================

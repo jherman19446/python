@@ -2,34 +2,46 @@
 
 
 def round_scores(student_scores):
+    whole_grades = [round(score) for score in student_scores]
+    return whole_grades
     """Round all provided student scores.
 
     :param student_scores: list - float or int of student exam scores.
     :return: list - student scores *rounded* to nearest integer value.
     """
 
-    pass
 
 
 def count_failed_students(student_scores):
+    index = 0
+    count = 0
+    while index < len(student_scores):
+        if student_scores[index] <= 40:
+            count += 1
+        index += 1
+    return count
     """Count the number of failing students out of the group provided.
 
     :param student_scores: list - containing int student scores.
     :return: int - count of student scores at or below 40.
     """
 
-    pass
-
 
 def above_threshold(student_scores, threshold):
+    index = 0
+    good_scores = []
+    for score in student_scores:
+        if student_scores[index] >= threshold:
+            good_scores.append(score)
+        index += 1
+    return good_scores
+
     """Determine how many of the provided student scores were 'the best' based on the provided threshold.
 
     :param student_scores: list - of integer scores.
     :param threshold: int - threshold to cross to be the "best" score.
     :return: list - of integer scores that are at or above the "best" threshold.
     """
-
-    pass
 
 
 def letter_grades(highest):

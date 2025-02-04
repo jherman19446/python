@@ -45,6 +45,8 @@ def above_threshold(student_scores, threshold):
 
 
 def letter_grades(highest):
+    step = int((highest - 40)/4)
+    return [41 + step*i for i in range(4)]
     """Create a list of grade thresholds based on the provided highest grade.
 
     :param highest: int - value of highest exam score.
@@ -58,10 +60,12 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    pass
-
 
 def student_ranking(student_scores, student_names):
+    rankings = []
+    for index, score in enumerate(student_scores, start=1):
+        rankings.append(f'{index}. {student_names[index-1]}: {score}')
+    return sorted(rankings)
     """Organize the student's rank, name, and grade information in descending order.
 
     :param student_scores: list - of scores in descending order.
@@ -69,14 +73,15 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
 
-    pass
-
 
 def perfect_score(student_info):
+    perfect_scores = []
+    for student in student_info:
+        if student[1] == 100:  # Check if the student's score is 100
+            return student
+    return perfect_scores     
     """Create a list that contains the name and grade of the first student to make a perfect score on the exam.
 
     :param student_info: list - of [<student name>, <score>] lists.
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
-
-    pass

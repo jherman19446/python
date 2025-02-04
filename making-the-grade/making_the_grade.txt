@@ -1,0 +1,349 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.21, pytest-8.3.4, pluggy-1.5.0
+rootdir: /home/jon/exercism/python/making-the-grade
+plugins: subtests-0.14.1
+collected 6 items
+
+loops_test.py ......                                             [100%]
+
+=================================== FAILURES ===================================
+_ MakingTheGradeTest.test_perfect_score [variation #1] (expected=['Joci', 100], student_info=[['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]]) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_perfect_score>
+
+    @pytest.mark.task(taskno=6)
+    def test_perfect_score(self):
+        test_data = [
+                     [['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]],
+                     [['Jill', 30], ['Paul', 73]],
+                     [],
+                     [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
+                      ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]],
+    
+                     [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
+                      ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]
+                     ]
+    
+    
+        result_data = [['Joci', 100],[], [], [], ['Raiana', 100]]
+    
+        for variant, (student_info, expected) in enumerate(zip(test_data, result_data), start=1):
+    
+            with self.subTest(f'variation #{variant}', student_info=student_info, expected=expected):
+                actual_result = perfect_score(student_info)
+                error_message = (f'Called perfect_score({student_info}). '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'first "perfect" score.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: None != ['Joci', 100] : Called perfect_score([['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]]). The function returned None, but the tests expected ['Joci', 100] for the first "perfect" score.
+
+loops_test.py:155: AssertionError
+_ MakingTheGradeTest.test_perfect_score [variation #2] (expected=[], student_info=[['Jill', 30], ['Paul', 73]]) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_perfect_score>
+
+    @pytest.mark.task(taskno=6)
+    def test_perfect_score(self):
+        test_data = [
+                     [['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]],
+                     [['Jill', 30], ['Paul', 73]],
+                     [],
+                     [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
+                      ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]],
+    
+                     [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
+                      ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]
+                     ]
+    
+    
+        result_data = [['Joci', 100],[], [], [], ['Raiana', 100]]
+    
+        for variant, (student_info, expected) in enumerate(zip(test_data, result_data), start=1):
+    
+            with self.subTest(f'variation #{variant}', student_info=student_info, expected=expected):
+                actual_result = perfect_score(student_info)
+                error_message = (f'Called perfect_score({student_info}). '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'first "perfect" score.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: None != [] : Called perfect_score([['Jill', 30], ['Paul', 73]]). The function returned None, but the tests expected [] for the first "perfect" score.
+
+loops_test.py:155: AssertionError
+_ MakingTheGradeTest.test_perfect_score [variation #3] (expected=[], student_info=[]) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_perfect_score>
+
+    @pytest.mark.task(taskno=6)
+    def test_perfect_score(self):
+        test_data = [
+                     [['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]],
+                     [['Jill', 30], ['Paul', 73]],
+                     [],
+                     [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
+                      ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]],
+    
+                     [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
+                      ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]
+                     ]
+    
+    
+        result_data = [['Joci', 100],[], [], [], ['Raiana', 100]]
+    
+        for variant, (student_info, expected) in enumerate(zip(test_data, result_data), start=1):
+    
+            with self.subTest(f'variation #{variant}', student_info=student_info, expected=expected):
+                actual_result = perfect_score(student_info)
+                error_message = (f'Called perfect_score({student_info}). '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'first "perfect" score.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: None != [] : Called perfect_score([]). The function returned None, but the tests expected [] for the first "perfect" score.
+
+loops_test.py:155: AssertionError
+_ MakingTheGradeTest.test_perfect_score [variation #4] (expected=[], student_info=[['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42], ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]]) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_perfect_score>
+
+    @pytest.mark.task(taskno=6)
+    def test_perfect_score(self):
+        test_data = [
+                     [['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]],
+                     [['Jill', 30], ['Paul', 73]],
+                     [],
+                     [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
+                      ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]],
+    
+                     [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
+                      ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]
+                     ]
+    
+    
+        result_data = [['Joci', 100],[], [], [], ['Raiana', 100]]
+    
+        for variant, (student_info, expected) in enumerate(zip(test_data, result_data), start=1):
+    
+            with self.subTest(f'variation #{variant}', student_info=student_info, expected=expected):
+                actual_result = perfect_score(student_info)
+                error_message = (f'Called perfect_score({student_info}). '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'first "perfect" score.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: None != [] : Called perfect_score([['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42], ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]]). The function returned None, but the tests expected [] for the first "perfect" score.
+
+loops_test.py:155: AssertionError
+_ MakingTheGradeTest.test_perfect_score [variation #5] (expected=['Raiana', 100], student_info=[['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60], ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_perfect_score>
+
+    @pytest.mark.task(taskno=6)
+    def test_perfect_score(self):
+        test_data = [
+                     [['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]],
+                     [['Jill', 30], ['Paul', 73]],
+                     [],
+                     [['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42],
+                      ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]],
+    
+                     [['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60],
+                      ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]
+                     ]
+    
+    
+        result_data = [['Joci', 100],[], [], [], ['Raiana', 100]]
+    
+        for variant, (student_info, expected) in enumerate(zip(test_data, result_data), start=1):
+    
+            with self.subTest(f'variation #{variant}', student_info=student_info, expected=expected):
+                actual_result = perfect_score(student_info)
+                error_message = (f'Called perfect_score({student_info}). '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'first "perfect" score.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: None != ['Raiana', 100] : Called perfect_score([['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60], ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]). The function returned None, but the tests expected ['Raiana', 100] for the first "perfect" score.
+
+loops_test.py:155: AssertionError
+_ MakingTheGradeTest.test_student_ranking [variation #1] (expected=['1. Betty: 82'], params=([82], ['Betty'])) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_student_ranking>
+
+    @pytest.mark.task(taskno=5)
+    def test_student_ranking(self):
+        test_data = [([82], ['Betty']),
+                     ([88, 73], ['Paul', 'Ernest']),
+                     ([100, 98, 92, 86, 70, 68, 67, 60],
+                      ['Rui', 'Betty', 'Joci', 'Yoshi', 'Kora', 'Bern', 'Jan', 'Rose'])]
+    
+        result_data = [['1. Betty: 82'],
+                       ['1. Paul: 88', '2. Ernest: 73'],
+                       ['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4. Yoshi: 86',
+                        '5. Kora: 70', '6. Bern: 68', '7. Jan: 67', '8. Rose: 60']]
+    
+        for variant, (params, expected) in enumerate(zip(test_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', params=params, expected=expected):
+                actual_result = student_ranking(*params)
+                error_message = (f'Called student_ranking{params}. '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'student rankings.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: Lists differ: ['1. Betty 82'] != ['1. Betty: 82']
+E               
+E               First differing element 0:
+E               '1. Betty 82'
+E               '1. Betty: 82'
+E               
+E               - ['1. Betty 82']
+E               + ['1. Betty: 82']
+E               ?           +
+E                : Called student_ranking([82], ['Betty']). The function returned ['1. Betty 82'], but the tests expected ['1. Betty: 82'] for the student rankings.
+
+loops_test.py:128: AssertionError
+_ MakingTheGradeTest.test_student_ranking [variation #2] (expected=['1. Paul: 88', '2. Ernest: 73'], params=([88, 73], ['Paul', 'Ernest'])) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_student_ranking>
+
+    @pytest.mark.task(taskno=5)
+    def test_student_ranking(self):
+        test_data = [([82], ['Betty']),
+                     ([88, 73], ['Paul', 'Ernest']),
+                     ([100, 98, 92, 86, 70, 68, 67, 60],
+                      ['Rui', 'Betty', 'Joci', 'Yoshi', 'Kora', 'Bern', 'Jan', 'Rose'])]
+    
+        result_data = [['1. Betty: 82'],
+                       ['1. Paul: 88', '2. Ernest: 73'],
+                       ['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4. Yoshi: 86',
+                        '5. Kora: 70', '6. Bern: 68', '7. Jan: 67', '8. Rose: 60']]
+    
+        for variant, (params, expected) in enumerate(zip(test_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', params=params, expected=expected):
+                actual_result = student_ranking(*params)
+                error_message = (f'Called student_ranking{params}. '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'student rankings.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: Lists differ: ['1. Paul 88', '2. Ernest 73'] != ['1. Paul: 88', '2. Ernest: 73']
+E               
+E               First differing element 0:
+E               '1. Paul 88'
+E               '1. Paul: 88'
+E               
+E               - ['1. Paul 88', '2. Ernest 73']
+E               + ['1. Paul: 88', '2. Ernest: 73']
+E               ?          +                +
+E                : Called student_ranking([88, 73], ['Paul', 'Ernest']). The function returned ['1. Paul 88', '2. Ernest 73'], but the tests expected ['1. Paul: 88', '2. Ernest: 73'] for the student rankings.
+
+loops_test.py:128: AssertionError
+_ MakingTheGradeTest.test_student_ranking [variation #3] (expected=['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4. Yoshi: 86', '5. Kora: 70', '6. Bern: 68', '7. Jan: 67', '8. Rose: 60'], params=([100, 98, 92, 86, 70, 68, 67, 60], ['Rui', 'Betty', 'Joci', 'Yoshi', 'Kora', 'Bern', 'Jan', 'Rose'])) _
+
+self = <loops_test.MakingTheGradeTest testMethod=test_student_ranking>
+
+    @pytest.mark.task(taskno=5)
+    def test_student_ranking(self):
+        test_data = [([82], ['Betty']),
+                     ([88, 73], ['Paul', 'Ernest']),
+                     ([100, 98, 92, 86, 70, 68, 67, 60],
+                      ['Rui', 'Betty', 'Joci', 'Yoshi', 'Kora', 'Bern', 'Jan', 'Rose'])]
+    
+        result_data = [['1. Betty: 82'],
+                       ['1. Paul: 88', '2. Ernest: 73'],
+                       ['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4. Yoshi: 86',
+                        '5. Kora: 70', '6. Bern: 68', '7. Jan: 67', '8. Rose: 60']]
+    
+        for variant, (params, expected) in enumerate(zip(test_data, result_data), start=1):
+            with self.subTest(f'variation #{variant}', params=params, expected=expected):
+                actual_result = student_ranking(*params)
+                error_message = (f'Called student_ranking{params}. '
+                                 f'The function returned {actual_result}, but '
+                                 f'the tests expected {expected} for the '
+                                 'student rankings.')
+    
+>               self.assertEqual(actual_result, expected, msg=error_message)
+E               AssertionError: Lists differ: ['1. Rui 100', '2. Betty 98', '3. Joci 92', '4. Y[59 chars] 60'] != ['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4[67 chars] 60']
+E               
+E               First differing element 0:
+E               '1. Rui 100'
+E               '1. Rui: 100'
+E               
+E               - ['1. Rui 100',
+E               + ['1. Rui: 100',
+E               ?         +
+E               
+E               -  '2. Betty 98',
+E               +  '2. Betty: 98',
+E               ?           +
+E               
+E               -  '3. Joci 92',
+E               +  '3. Joci: 92',
+E               ?          +
+E               
+E               -  '4. Yoshi 86',
+E               +  '4. Yoshi: 86',
+E               ?           +
+E               
+E               -  '5. Kora 70',
+E               +  '5. Kora: 70',
+E               ?          +
+E               
+E               -  '6. Bern 68',
+E               +  '6. Bern: 68',
+E               ?          +
+E               
+E               -  '7. Jan 67',
+E               +  '7. Jan: 67',
+E               ?         +
+E               
+E               -  '8. Rose 60']
+E               +  '8. Rose: 60']
+E               ?          +
+E                : Called student_ranking([100, 98, 92, 86, 70, 68, 67, 60], ['Rui', 'Betty', 'Joci', 'Yoshi', 'Kora', 'Bern', 'Jan', 'Rose']). The function returned ['1. Rui 100', '2. Betty 98', '3. Joci 92', '4. Yoshi 86', '5. Kora 70', '6. Bern 68', '7. Jan 67', '8. Rose 60'], but the tests expected ['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4. Yoshi: 86', '5. Kora: 70', '6. Bern: 68', '7. Jan: 67', '8. Rose: 60'] for the student rankings.
+
+loops_test.py:128: AssertionError
+=============================== warnings summary ===============================
+loops_test.py:15
+  /home/jon/exercism/python/making-the-grade/loops_test.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=1)
+
+loops_test.py:45
+  /home/jon/exercism/python/making-the-grade/loops_test.py:45: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=2)
+
+loops_test.py:64
+  /home/jon/exercism/python/making-the-grade/loops_test.py:64: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=3)
+
+loops_test.py:88
+  /home/jon/exercism/python/making-the-grade/loops_test.py:88: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=4)
+
+loops_test.py:108
+  /home/jon/exercism/python/making-the-grade/loops_test.py:108: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=5)
+
+loops_test.py:130
+  /home/jon/exercism/python/making-the-grade/loops_test.py:130: PytestUnknownMarkWarning: Unknown pytest.mark.task - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.task(taskno=6)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+[variation #1] (expected=['Joci', 100], student_info=[['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]]) SUBFAIL loops_test.py::MakingTheGradeTest::test_perfect_score
+[variation #2] (expected=[], student_info=[['Jill', 30], ['Paul', 73]]) SUBFAIL loops_test.py::MakingTheGradeTest::test_perfect_score
+[variation #3] (expected=[], student_info=[]) SUBFAIL loops_test.py::MakingTheGradeTest::test_perfect_score
+[variation #4] (expected=[], student_info=[['Rui', 60], ['Joci', 58], ['Sara', 91], ['Kora', 93], ['Alex', 42], ['Jan', 81], ['Lilliana', 40], ['John', 60], ['Bern', 28], ['Vlad', 55]]) SUBFAIL loops_test.py::MakingTheGradeTest::test_perfect_score
+[variation #5] (expected=['Raiana', 100], student_info=[['Yoshi', 52], ['Jan', 86], ['Raiana', 100], ['Betty', 60], ['Joci', 100], ['Kora', 81], ['Bern', 41], ['Rose', 94]]) SUBFAIL loops_test.py::MakingTheGradeTest::test_perfect_score
+[variation #1] (expected=['1. Betty: 82'], params=([82], ['Betty'])) SUBFAIL loops_test.py::MakingTheGradeTest::test_student_ranking
+[variation #2] (expected=['1. Paul: 88', '2. Ernest: 73'], params=([88, 73], ['Paul', 'Ernest'])) SUBFAIL loops_test.py::MakingTheGradeTest::test_student_ranking
+[variation #3] (expected=['1. Rui: 100', '2. Betty: 98', '3. Joci: 92', '4. Yoshi: 86', '5. Kora: 70', '6. Bern: 68', '7. Jan: 67', '8. Rose: 60'], params=([100, 98, 92, 86, 70, 68, 67, 60], ['Rui', 'Betty', 'Joci', 'Yoshi', 'Kora', 'Bern', 'Jan', 'Rose'])) SUBFAIL loops_test.py::MakingTheGradeTest::test_student_ranking
+=================== 8 failed, 6 passed, 6 warnings in 0.09s ====================

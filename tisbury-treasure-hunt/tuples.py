@@ -2,26 +2,34 @@
 
 
 def get_coordinate(record):
+    return record[1]
     """Return coordinate value from a tuple containing the treasure name, and treasure coordinate.
 
     :param record: tuple - with a (treasure, coordinate) pair.
     :return: str - the extracted map coordinate.
     """
 
-    pass
+    
 
 
 def convert_coordinate(coordinate):
+    formatted_tuple = tuple(coordinate)
+    return formatted_tuple
     """Split the given coordinate into tuple containing its individual components.
 
     :param coordinate: str - a string map coordinate
     :return: tuple - the string coordinate split into its individual components.
     """
 
-    pass
+
 
 
 def compare_records(azara_record, rui_record):
+    azara = convert_coordinate(azara_record[1])
+    rui = convert_coordinate(rui_record[1])
+    if azara == rui:
+        return True
+    return False
     """Compare two record types and determine if their coordinates match.
 
     :param azara_record: tuple - a (treasure, coordinate) pair.
@@ -29,10 +37,16 @@ def compare_records(azara_record, rui_record):
     :return: bool - do the coordinates match?
     """
 
-    pass
+
 
 
 def create_record(azara_record, rui_record):
+    azara = convert_coordinate(azara_record[1])
+    rui = convert_coordinate(rui_record[1])
+    if azara == rui:
+        return(azara_record + rui_record)
+    else:
+        return("not a match")
     """Combine the two record types (if possible) and create a combined record group.
 
     :param azara_record: tuple - a (treasure, coordinate) pair.
@@ -40,10 +54,14 @@ def create_record(azara_record, rui_record):
     :return: tuple or str - the combined record (if compatible), or the string "not a match" (if incompatible).
     """
 
-    pass
 
 
 def clean_up(combined_record_group):
+    report = ""
+    for record in combined_record_group:
+        report += str(record[:1] + record[2:]) + "\n"
+    return report
+    
     """Clean up a combined record group into a multi-line string of single records.
 
     :param combined_record_group: tuple - everything from both participants.
